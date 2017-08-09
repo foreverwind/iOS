@@ -11,7 +11,7 @@
 		F891E5BD1F3ADC03002C915C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F891E5BC1F3ADC03002C915C /* AppDelegate.m */; };
 		F891E5C01F3ADC03002C915C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F891E5BF1F3ADC03002C915C /* ViewController.m */; };
 		F891E5C51F3ADC03002C915C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F891E5C41F3ADC03002C915C /* Assets.xcassets */; };
-		F891E5D31F3ADCA4002C915C /* SAMSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = F891E5D21F3ADCA4002C915C /* SAMSubject.m */; };
+		F891E5D31F3ADCA4002C915C /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = F891E5D21F3ADCA4002C915C /* Subject.m */; };
 		F891E5DF1F3ADD87002C915C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F891E5DB1F3ADD87002C915C /* LaunchScreen.storyboard */; };
 		F891E5E01F3ADD87002C915C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F891E5DD1F3ADD87002C915C /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -25,9 +25,9 @@
 		F891E5BF1F3ADC03002C915C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F891E5C41F3ADC03002C915C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F891E5C91F3ADC03002C915C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F891E5D01F3ADCA4002C915C /* SAMObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMObserver.h; sourceTree = "<group>"; };
-		F891E5D11F3ADCA4002C915C /* SAMSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMSubject.h; sourceTree = "<group>"; };
-		F891E5D21F3ADCA4002C915C /* SAMSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMSubject.m; sourceTree = "<group>"; };
+		F891E5D01F3ADCA4002C915C /* Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
+		F891E5D11F3ADCA4002C915C /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
+		F891E5D21F3ADCA4002C915C /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
 		F891E5DC1F3ADD87002C915C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F891E5DE1F3ADD87002C915C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,9 +87,9 @@
 		F891E5CF1F3ADCA4002C915C /* Observer */ = {
 			isa = PBXGroup;
 			children = (
-				F891E5D01F3ADCA4002C915C /* SAMObserver.h */,
-				F891E5D11F3ADCA4002C915C /* SAMSubject.h */,
-				F891E5D21F3ADCA4002C915C /* SAMSubject.m */,
+				F891E5D01F3ADCA4002C915C /* Observer.h */,
+				F891E5D11F3ADCA4002C915C /* Subject.h */,
+				F891E5D21F3ADCA4002C915C /* Subject.m */,
 			);
 			path = Observer;
 			sourceTree = "<group>";
@@ -165,7 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F891E5D31F3ADCA4002C915C /* SAMSubject.m in Sources */,
+				F891E5D31F3ADCA4002C915C /* Subject.m in Sources */,
 				F891E5C01F3ADC03002C915C /* ViewController.m in Sources */,
 				F891E5BD1F3ADC03002C915C /* AppDelegate.m in Sources */,
 				F891E5BA1F3ADC03002C915C /* main.m in Sources */,

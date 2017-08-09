@@ -1,14 +1,14 @@
 //
-//  SAMSubject.m
-//  AddMe
+//  Subject.m
+//  iOS_OC
 //
 //  Created by star on 2017/7/25.
-//  Copyright © 2017年 SecretLisa. All rights reserved.
+//  Copyright © 2017年 foreverwind. All rights reserved.
 //
 
-#import "SAMSubject.h"
+#import "Subject.h"
 
-@implementation NSObject (SAMSubject)
+@implementation NSObject (Subject)
 
 - (id)performSelector:(SEL)aSelector withArguments:(NSArray *)arguments
 {
@@ -40,16 +40,34 @@
             if (strcmp(type, @encode(id)) == 0) {
                 [invocation setArgument:&argument atIndex:2 + i];
             } else if (strcmp(type, @encode(short)) == 0) {
-                short arg = [argument intValue];
+                short arg = [argument shortValue];
+                [invocation setArgument:&arg atIndex:2 + i];
+            } else if (strcmp(type, @encode(unsigned short)) == 0) {
+                short arg = [argument unsignedShortValue];
                 [invocation setArgument:&arg atIndex:2 + i];
             } else if (strcmp(type, @encode(int)) == 0) {
                 int arg = [argument intValue];
                 [invocation setArgument:&arg atIndex:2 + i];
+            } else if (strcmp(type, @encode(unsigned int)) == 0) {
+                int arg = [argument unsignedIntValue];
+                [invocation setArgument:&arg atIndex:2 + i];
             } else if (strcmp(type, @encode(long)) == 0) {
-                long arg = [argument intValue];
+                long arg = [argument longValue];
+                [invocation setArgument:&arg atIndex:2 + i];
+            } else if (strcmp(type, @encode(unsigned long)) == 0) {
+                long arg = [argument unsignedLongValue];
                 [invocation setArgument:&arg atIndex:2 + i];
             } else if (strcmp(type, @encode(long long)) == 0) {
-                long long arg = [argument intValue];
+                long long arg = [argument longLongValue];
+                [invocation setArgument:&arg atIndex:2 + i];
+            } else if (strcmp(type, @encode(unsigned long long)) == 0) {
+                long long arg = [argument unsignedLongLongValue];
+                [invocation setArgument:&arg atIndex:2 + i];
+            } else if (strcmp(type, @encode(NSInteger)) == 0) {
+                long long arg = [argument integerValue];
+                [invocation setArgument:&arg atIndex:2 + i];
+            } else if (strcmp(type, @encode(NSUInteger)) == 0) {
+                long long arg = [argument unsignedIntValue];
                 [invocation setArgument:&arg atIndex:2 + i];
             } else if (strcmp(type, @encode(float)) == 0) {
                 float arg = [argument floatValue];
@@ -76,13 +94,13 @@
 
 @end
 
-@interface SAMSubject ()
+@interface Subject ()
 
 @property (nonatomic, strong) NSHashTable *observers;
 
 @end
 
-@implementation SAMSubject
+@implementation Subject
 
 - (instancetype)init
 {
@@ -94,14 +112,14 @@
     return self;
 }
 
-- (void)addObserver:(id<SAMObserver>)observer
+- (void)addObserver:(id<Observer>)observer
 {
     @synchronized (self) {
         [self.observers addObject:observer];
     }
 }
 
-- (void)removeObserver:(id<SAMObserver>)observer
+- (void)removeObserver:(id<Observer>)observer
 {
     @synchronized (self) {
         if ([self.observers containsObject:observer]) {
